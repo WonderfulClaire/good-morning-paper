@@ -1,0 +1,8 @@
+seed_papers:
+  - title: "Example Seed Paper on Neural Beamforming"
+    authors: ["Author A", "Author B"]
+    venue: "ICASSP"
+    year: 2024
+    abstract: "A seed paper about robust neural beamforming and post-filtering for noisy reverberant speech."
+    url: "https://example.org/seed-paper"
+    notes: "关注其 MVDR 初始化 + 神经后滤波器的联训方式"
