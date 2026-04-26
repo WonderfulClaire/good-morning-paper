@@ -1,0 +1,46 @@
+user_profile:
+  language: zh-CN
+  objective: "追踪多通道语音增强、麦克风阵列语音增强、神经波束形成与后滤波方向的最新研究"
+  focus_topics:
+    - multi-channel speech enhancement
+    - microphone-array speech enhancement
+    - neural beamforming
+    - MVDR beamforming
+    - GEV beamforming
+    - RTF
+    - ATF
+    - RIR modeling
+    - neural post-filtering
+    - ExNet-BF-PF
+    - AFNet
+  frontier_topics:
+    - large audio model
+    - multimodal learning
+    - foundation model
+    - diffusion
+    - test-time adaptation
+    - audio-visual speech enhancement
+
+search:
+  days_back: 30
+  max_results_per_source: 25
+  max_candidates_total: 120
+
+venues:
+  high_priority:
+    - IEEE/ACM Transactions on Audio, Speech, and Language Processing
+    - IEEE TASLP
+    - ICASSP
+    - Interspeech
+    - NeurIPS
+    - ICML
+
+ranking:
+  weights:
+    keyword_match: 0.35
+    venue_priority: 0.20
+    recency: 0.15
+    title_abstract_relevance: 0.20
+    frontier_bonus: 0.10
+    seed_similarity: 0.10
+  pick_top_n: 1
