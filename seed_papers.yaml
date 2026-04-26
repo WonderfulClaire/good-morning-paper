@@ -1,8 +1,40 @@
 seed_papers:
-  - title: "Example Seed Paper on Neural Beamforming"
-    authors: ["Author A", "Author B"]
-    venue: "ICASSP"
-    year: 2024
-    abstract: "A seed paper about robust neural beamforming and post-filtering for noisy reverberant speech."
-    url: "https://example.org/seed-paper"
-    notes: "关注其 MVDR 初始化 + 神经后滤波器的联训方式"
+- title: "Multi-Channel Speech Enhancement Guided by Learning-Based A Posteriori Speech Presence Probability Estimation"
+  authors: "Shuai Tao, Pejman Mowlaee, Jesper Rindom Jensen, Mads Græsbøll Christensen"
+  venue: "IEEE Transactions on Audio, Speech and Language Processing"
+  year: 2025
+  url: ""
+  abstract: "This paper proposes a DNN-guided multi-channel speech enhancement method for noise reduction, dereverberation, and speech restoration. Instead of using an end-to-end mapping, the method uses a DNN to estimate a posteriori speech presence probability (SPP), which guides the statistics estimation in both beamforming and post-filtering stages. In the first stage, multi-channel SPP is used to update speech and noise PSD matrices and implement MVDR beamforming. In the second stage, single-channel SPP guides noise PSD estimation for an MMSE-LSA post-filter."
+  notes: "核心参考：DNN-guided beamforming + post-filtering；重点关注 SPP 如何指导 PSD matrix estimation、MVDR beamformer 和 post-filter。非常适合作为可解释 hybrid 方法的代表。"
+
+- title: "Real-Time Multichannel Deep Speech Enhancement in Hearing Aids: Comparing Monaural and Binaural Processing in Complex Acoustic Scenarios"
+  authors: "Nils L. Westhausen, Hendrik Kayser, Theresa Jansen, Bernd T. Meyer"
+  venue: "IEEE/ACM Transactions on Audio, Speech, and Language Processing"
+  year: 2024
+  url: ""
+  abstract: "This paper studies real-time deep multichannel speech enhancement for hearing aids under strict low-latency and low-complexity requirements. It compares monaural and binaural processing algorithms in complex acoustic scenes and evaluates them using objective metrics and experiments with hearing-impaired listeners. The method includes deep spatial filtering and post-filtering, and highlights the advantages of binaural deep learning in spatial-interferer scenarios."
+  notes: "核心参考：real-time、low-latency、多通道/双耳 hearing-aid 场景；重点关注 deep spatial filtering + post-filtering、低计算复杂度、真实主观实验。适合帮助我理解部署约束和实时系统评价。"
+
+- title: "Better Exploiting Spatial Separability in Multichannel Speech Enhancement with an Align-and-Filter Network"
+  authors: "Ching-Hua Lee, Chouchang Yang, Yashas Malur Saidutta, Rakshith Sharma Srinivasa, Yilin Shen, Hongxia Jin"
+  venue: "ICASSP"
+  year: 2025
+  url: ""
+  abstract: "This paper proposes AFNet, a two-stage Align-and-Filter network for multichannel speech enhancement. Inspired by classical align-then-filter signal processing, AFNet decomposes denoising into spatial alignment and spatial filtering. It uses relative transfer functions (RTFs) to supervise the alignment stage, allowing the network to learn interpretable directional features and better exploit spatial separability."
+  notes: "核心参考：AFNet；重点关注 RTF-based alignment loss、Align Net + Filter Net 两阶段结构、spatial separability 和可解释 directional features。适合和 ExNet-BF+PF 对比。"
+
+- title: "Explainable DNN-Based Beamformer With Postfilter"
+  authors: "Adi Cohen, Daniel Wong, Jung-Suk Lee, Sharon Gannot"
+  venue: "IEEE Transactions on Audio, Speech and Language Processing"
+  year: 2025
+  url: "https://github.com/AdiCohen501/ExNet-BF-PF"
+  abstract: "This paper proposes ExNet-BF+PF, an explainable DNN-based beamformer with a postfilter for multichannel speech enhancement. The method uses a two-stage pipeline: a multichannel neural processor estimates time-invariant beamformer weights for spatial filtering, and a single-channel post-filter estimates time-varying weights at the beamformer output. The architecture preserves beamforming structure and includes spatial analysis to understand how the network uses spatial information."
+  notes: "核心参考：ExNet-BF+PF；重点关注 time-invariant neural beamformer、time-varying post-filter、U-Net、attention skip connections、spatial analysis 和 explainability。是我当前复现和改进的主线论文。"
+
+- title: "Insights Into Deep Non-Linear Filters for Improved Multi-Channel Speech Enhancement"
+  authors: "Kristina Tesch, Timo Gerkmann"
+  venue: "IEEE/ACM Transactions on Audio, Speech, and Language Processing"
+  year: 2023
+  url: ""
+  abstract: "This paper analyzes deep non-linear filters for multi-channel speech enhancement. It studies how spatial, spectral, and temporal information contribute to DNN-based joint non-linear filtering, and compares traditional linear beamforming plus post-filtering with joint spatial and tempo-spectral non-linear processing. The paper shows that jointly processing spectral and spatial information can improve spatial selectivity and outperform conventional linear spatial filtering in challenging scenarios."
+  notes: "核心参考：deep non-linear filter / joint spatial-tempo-spectral filtering；重点关注为什么 DNN joint filtering 可能比传统 beamformer + post-filter 更强，以及 spatial/spectral/temporal 信息如何相互作用。适合作为理论分析和设计启发。"
